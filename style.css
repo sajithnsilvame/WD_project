@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+    /* box-sizing: border-box; */
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url(images/banner.jpg);
+    background-position: center;
+    border-style: cover;
+    position: relative;
+}
+
+/* ------------------- Nav Bar -------------- */
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+ nav img{
+     width: 150px;
+ }
+
+ .nav-links{
+     flex: 1;
+     text-align: right;
+     /* overflow: auto; */
+ }
+ 
+ .nav-links ul li{
+     list-style: none;
+     display: inline-block;
+     padding: 8px 12px;
+     position: relative;
+ }
+
+ .nav-links ul li a{
+     color: #fff;
+     text-decoration: none;
+     font-size: 13px;
+     
+ }
+
+ .nav-links ul li::after{
+     content: '';
+     width: 0%;
+     height: 2px;
+     background: #f44336;
+     display: block;
+     margin: auto;
+     transition: 0.5s;
+     
+ }
+
+ .nav-links ul li:hover::after{
+    width: 100%;
+ }
+
+ nav .menu-btn i{
+     color: #fff;
+     font-size: 22px;
+     cursor: pointer;
+     display: none;
+ }
+
+ #click{
+    display: none;
+}
+
+ .text-box{
+     width: 90%;
+     color: #fff;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+
+ }
+
+ .text-box p{
+     margin: 10px 0 40px;
+     font-size: 15px;
+     color: #fff;
+ }
+
+ .text-box h1{
+     font-size: 63px;
+ }
+
+ .hero-btn{
+     display: inline-block;
+     text-decoration: none;
+     color: #fff;
+     border: 1px solid #fff;
+     /* border-radius: 50px; */
+     padding: 12px 34px 12px 34px;
+
+     /* padding-top: 12px;
+     padding-bottom: 12px;
+     padding-left: 34px;
+     padding-right: 34px; */
+     
+     font-size: 14px;
+     background: transparent;
+     position: relative;
+     cursor: pointer;
+ }
+
+ .hero-btn:hover{
+     border: 1px solid #f44336;
+     background: #f44336;
+     transition: 1s;  
+ }
+
+ 
+  
+ @media screen and (max-width: 940px){
+    .text-box h1{
+        font-size: 20px;
+    }
+
+    nav .menu-btn i{
+        display: block;
+    }
+
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+
+    .menu-btn i:hover{
+        color:#f44336;
+        transition: 1s;
+    }
+
+    nav ul {
+        position: absolute;
+        margin-top: 18px;
+        top: 80px;
+        left: -100%;  
+        background: rgb(10, 81, 233);
+        height: 33vh;  
+        width: 100%;
+        display: block;
+        text-align: center;
+        z-index: 1;
+        transition: all 0.3 ease;
+    }
+
+    #click:checked ~ ul{
+        left: 0%;
+    }
+
+    .nav-links ul li{
+        display: block;
+    }
+
+    .nav-links ul li:hover::after{
+        width: 0%;
+     }
+    
+     
+    
+}
+
+
+/* ----------- Courses we offer--------- */
+
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 85px;
+}
+
+ h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+ p{
+    color: #777;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #fff4f4;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+ h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 820px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+/* ---------- Global campus ----------- */
+
+.campuses{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 85px;
+}
+
+.campus-col{
+    flex-basis: 32%;
+    /* border-radius: 10px; */
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.campus-col img{
+    width: 100%;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover{
+    background: rgba(41, 77, 173, 0.7);
+    cursor: pointer;
+}
+
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+
+/* ----------- facilities ----------- */
+
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 85px;
+}
+
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: center; 
+}
+
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.facilities-col img:hover{
+    box-shadow: 0 0 20px 0px rgba(41, 77, 173, 0.7);
+    cursor: pointer;
+}
+
+/* ----------- testimonial ----------- */
+
+.testimonial,
+.lecturer {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    background: #fff3f3;
+    margin: auto;
+    flex: 20%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+
+}
+
+.testimonial img,
+.lecturer img {
+        width: 250px;
+        border-radius: 300px;
+        cursor: pointer;
+        margin-top: 35px;
+}
+
+ /* .testimonial .fa{
+    color: #f3ef0e;
+    font-size: 30px;
+} this style did not work. Find the reason*/
+
+@media screen and (max-width: 1032px){
+    .testimonial, 
+    .lecturer {
+        width: 100%;
+        margin: auto;
+        padding-top: 80px;
+        padding-bottom: 50px;
+        text-align: center;
+        margin: auto;
+        flex: 20%;
+    }
+}
+
+/* ------- call to action ---------- */
+
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(19, 21, 48, 0.7), rgba(0, 0, 0, 0.7)), url(images/bottom_banner.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta h1{
+    color: #fff;
+    /* padding-bottom: 33px; */
+    margin-bottom: 100px;
+}
+
+.cta a{
+    margin-bottom: 80px;
+}
+
+@media(max-width: 700px){
+    .cta h1{
+        font-size: 24px;
+    }
+}
+
+/*--------------- Footer ------------ */
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h3{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.s-icn{
+   color: #f44336;
+   margin: 0 13px;
+   padding: 18px 0;
+   font-size: 18px;
+}
+
+/* .s-icn:hover{
+    border: 0.5px solid rgb(11, 130, 241);
+    padding: 10px;
+    border-radius: 50%;
+    color: #000;
+ } */
+
+.fa-facebook:hover{
+    border: 2px solid rgb(11, 130, 241);
+    padding: 10px 12px;
+    border-radius: 50%;
+    color: rgb(19, 118, 231);
+ }
+ .fa-twitter:hover{
+    border: 2px solid rgb(11, 130, 241);
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(19, 118, 231);
+ }
+ .fa-instagram:hover{
+    border: 2px solid rgb(226, 26, 36);
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(226, 26, 36);
+ }
+ .fa-linkedin:hover{
+    border: 2px solid rgb(11, 130, 241);
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(41, 127, 207);
+ }
+
+/* ------------- Lecturer Page -------------- */
+
+.sub--header{
+    min-height: 65vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url(images/lecturers.jpg);
+    background-position: center;
+    border-style: cover;
+    position: relative;
+}
+
+.lecturer{
+    margin-top: 100px;
+}
+
+/* .lecturer-col p::before{
+    content: open-quote;
+    font-size: 32px;
+}
+
+.lecturer-col p::after{
+    content: close-quote;
+    font-size: 32px;
+} */
+
+
+
+
+
+
+
+ 
